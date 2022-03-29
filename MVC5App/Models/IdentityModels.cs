@@ -23,11 +23,16 @@ namespace MVC5App.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+          
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Student> Student { get; set; }
+        public DbSet<Teacher> Teacher { get; set; }
+
+        public DbSet<TeacherAssignedToStudent> TeacherAssignedToStudent { get; set; }
     }
 }
